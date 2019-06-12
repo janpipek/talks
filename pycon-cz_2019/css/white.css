@@ -387,13 +387,25 @@ div.source {
   width: 61%;
 }
 
+#conclusion {
+  position: absolutee;
+  right: 0%;
+  width: 61%;
+  text-align: right;
+}
+
+#conclusion * {
+  color: #ffc;
+  text-shadow: #222;
+}
+
 #title-screen h2 {
   color: #fff;
   text-shadow: #222;
 }
 
-#title-screen h4 {
-  color: #cfc;
+#title-screen h4, #conclusion h4 {
+  color: #ffc;
 }
 
 /* .reveal .progress span::after img {
