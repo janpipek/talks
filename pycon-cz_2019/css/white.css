@@ -321,7 +321,24 @@ body {
  }
 
  code.hljs {
-   background-color: #f0f0f0;
+   background-color: #f4f4f4;
+ }
+
+ code.hljs .hljs-string {
+   color: #484;  
+ }
+
+ code.hljs .hljs-comment {
+   color: #88c;
+ }
+
+ code.hljs .hljs-title {
+   font-weight: bold;
+   color: black;
+ }
+
+ code.hljs .hljs-meta {
+   color: #a40;
  }
 
  .output code {
@@ -388,24 +405,44 @@ div.source {
 }
 
 #conclusion {
-  position: absolutee;
-  right: 0%;
+  position: absolute;
+  right: -6%;
   width: 61%;
   text-align: right;
 }
 
-#conclusion * {
-  color: #ffc;
-  text-shadow: #222;
+#conclusion h2 {
+  color:white;
+  margin-top: 1em;
+  text-shadow: 0px 0px 5px #222;
+}
+
+#conclusion h3 {
+  color: #999;
+  margin-top: 1em;
+  text-shadow: 0px 0px 5px #222;
 }
 
 #title-screen h2 {
   color: #fff;
-  text-shadow: #222;
+  text-shadow: 0px 0px #222;
 }
 
-#title-screen h4, #conclusion h4 {
+#title-screen h4 {
   color: #ffc;
+  text-shadow: 0px 0px #222;
+}
+
+.good {
+  color: #f99;
+}
+
+.bad {
+  color: #9f9;
+}
+
+.ugly {
+  color: #99f;
 }
 
 /* .reveal .progress span::after img {
