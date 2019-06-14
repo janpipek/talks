@@ -51,6 +51,8 @@
 </ul>
 
 <p><i class="fab fa-twitter"></i> <i class="fab fa-github"></i>&nbsp;janpipek</p>
+
+<img src="images/pydata.png" style="height:2em;"/>
 </script></section><section  data-markdown><script type="text/template">
 <!-- <https://gbtimes.com/giant-panda-cubs-get-microchip-implants> -->
 
@@ -443,11 +445,7 @@ geo_df.plot(ax=ax, c="red");
 
 - register_\*\*\*_accessor
 
-- _accessors
-
-- \_\_gettattr__
-
-- \_\_dir__
+- CachedAccessor class
 
 - AttributeError
 </script></section><section  data-markdown><script type="text/template">
@@ -598,6 +596,14 @@ Part of the pandas library itself!
 - Modify the standard unit test suite to your needs
 
 - Make the tests pass!
+</script></section><section  data-markdown><script type="text/template">
+### Behind the scenes
+
+- Numpy dtypes (ints, floats, objects, structs, ...)
+
+- Pandas dtypes (category, datetime, interval, ...)
+
+- Dtype registry
 </script></section><section  data-markdown><script type="text/template">
 ### Real-world examples: pandas types (0.24)
 
