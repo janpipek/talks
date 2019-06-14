@@ -157,6 +157,8 @@
   </tbody>
 </table>
 </script></section><section  data-markdown><script type="text/template">
+### I want to extend it...
+</script></section><section  data-markdown><script type="text/template">
 ### Good, Bad or Ugly?
 
 <h4 class="fragment" style="color: #aa0">Yes. <span class="fragment" style="color: #0a0">Yes. </span><span class="fragment" style="color: #00a">Yes. </span></h4>
@@ -167,7 +169,7 @@
 
 - Accessors for **DataFrame**, **Series** or **Index**
 
-- **Extension types** and **arrays**
+- **Extension types** and **arrays** <span style="opacity:0.7">(0.23+)</span>
 
 <div class="footnote">See <https://pandas.pydata.org/pandas-docs/stable/development/extending.html></div>
 
@@ -177,9 +179,11 @@
 
 ## 1) Inheritance
 </script></section><section  data-markdown><script type="text/template">
+### Recipe
+
 - Create a daughter class of DataFrame / Series
 
-- Mark additional properties
+- Mark additional properties as `_metadata`
 
 - Implement specific behaviour
 
@@ -215,7 +219,7 @@ class ColouredDataFrame(pd.DataFrame):
              'props': [('background-color', self.colour)]}]
         
     def to_html(self, *args, **kwargs):
-        """HTML represenation (e.g. for Jupyter notebook.)"""
+        """HTML representation (e.g. for Jupyter notebook.)"""
         return self.style.set_table_styles(
             self.style_props).render()
 
@@ -427,18 +431,33 @@ geo_df.plot(ax=ax, c="red");
 
 = adding new methods to existing Series and DataFrames
 </script></section><section  data-markdown><script type="text/template">
+### Recipe
+
 - Create an accessor class
 
 - Implement custom behaviour
 
 - Register it for use with Series, DataFrame or Index
 </script></section><section  data-markdown><script type="text/template">
-#### Series accessor example: Panda emoticons! 
+### Behind the scenes
+
+- register_\*\*\*_accessor
+
+- _accessors
+
+- \_\_gettattr__
+
+- \_\_dir__
+
+- AttributeError
+</script></section><section  data-markdown><script type="text/template">
+#### Series accessor example: Panda multiplier! 
 
 ```python
 @pandas.api.extensions.register_series_accessor("panda")
 class PandaSeriesAccessor:
     def __init__(self, data):
+        # Be specific about the type
         if data.dtype.kind != "i":
             raise AttributeError
         self.data = data
@@ -566,6 +585,8 @@ Part of the pandas library itself!
 
 = adding new (d)types for Series
 </script></section><section  data-markdown><script type="text/template">
+### Recipe
+
 - Define a **dtype** class
 
 - Define an **extension array** class for it
