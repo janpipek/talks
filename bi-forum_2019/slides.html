@@ -336,62 +336,7 @@ exactly one geometry column (of type GeoSeries).
 ```python
 world = geopandas.read_file(
     geopandas.datasets.get_path("naturalearth_lowres"))
-world.iloc[39:42]
-```
-
-<div style="height:1em"></div>
-
-<table border="1" class="dataframe" style="font-size:50%">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pop_est</th>
-      <th>continent</th>
-      <th>name</th>
-      <th>iso_a3</th>
-      <th>gdp_md_est</th>
-      <th style="background-color:#ffc">geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>39</th>
-      <td>531640.0</td>
-      <td>Asia</td>
-      <td>Cyprus</td>
-      <td>CYP</td>
-      <td>22700.0</td>
-      <td style="background-color:#ffc">POLYGON ((33.973616 35.058506, ...</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>10211904.0</td>
-      <td>Europe</td>
-      <td>Czech Rep.</td>
-      <td>CZE</td>
-      <td>265200.0</td>
-      <td style="background-color:#ffc">POLYGON ((16.960288 48.596982, ...</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>82329758.0</td>
-      <td>Europe</td>
-      <td>Germany</td>
-      <td>DEU</td>
-      <td>2918000.0</td>
-      <td style="background-color:#ffc">POLYGON ((9.921906 54.983104, ...</td>
-    </tr>
-  </tbody>
-</table>
-</script></section><section  data-markdown><script type="text/template">
-```python
-places = ["My Home", "PyCon"]
-coords = ((14.420, 50.090), (18.281, 49.82))
-geometry = GeoSeries([Point(p) for p in coords])
-geo_df = GeoDataFrame({
-    "places": places
-})
-geo_df.geometry = geometry
+world.loc[[115,153]]
 ```
 
 <div style="height:1em"></div>
@@ -400,30 +345,76 @@ geo_df.geometry = geometry
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>places</th>
-      <th>geometry</th>
+      <th>pop_est</th>
+      <th>continent</th>
+      <th>name</th>
+      <th>iso_a3</th>
+      <th>gdp_md_est</th>
+      <th style="background:#ffc">geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>115</th>
+      <td>9850845</td>
+      <td>Europe</td>
+      <td>Hungary</td>
+      <td>HUN</td>
+      <td>267600.0</td>
+      <td style="background:#ffc">POLYGON ((22.08561 48.42226, 22.64082 48.15024...</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>10674723</td>
+      <td>Europe</td>
+      <td>Czechia</td>
+      <td>CZE</td>
+      <td>350900.0</td>
+      <td style="background:#ffc">POLYGON ((15.01700 51.10667, 15.49097 50.78473...</td>
+    </tr>
+  </tbody>
+</table>
+</script></section><section  data-markdown><script type="text/template">
+```python
+places = ["My Home", "BI Fórum"]
+coords = ((14.415, 50.131), (19.027, 47.499))
+geometry = GeoSeries([Point(p) for p in coords])
+places_df = GeoDataFrame({
+    "name": places,
+    "geometry": geometry
+})
+```
+
+<div style="height:1em"></div>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th style="background:#ffc">geometry</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>My Home</td>
-      <td>POINT (14.420 50.090)</td>
+      <td style="background:#ffc">POINT (14.41500 50.13100)</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>PyCon</td>
-      <td>POINT (18.281 49.82)</td>
+      <td>BI Fórum</td>
+      <td style="background:#ffc">POINT (19.02700 47.49900)</td>
     </tr>
   </tbody>
 </table>
 </script></section><section  data-markdown><script type="text/template">
 ```
-ax = world[world.name.str.contains("Czech")].plot(lw=2, alpha=.5)
-geo_df.plot(ax=ax, c="red");
+ax = world.loc[[115,153]].plot(color="green", alpha=.5)
+places_df.plot(ax=ax, c="red");
 ```
 
-![Map of Czechia](images/cz-map.svg)
+![Map of Czechia](images/cz_hu-map.svg)
 </script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="images/light-pandas.png" -->
 
