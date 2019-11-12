@@ -172,11 +172,7 @@
 - Accessors for **DataFrame**, **Series** or **Index**
 
 - **Extension types** and **arrays** <span style="opacity:0.7">(0.23+)</span>
-
-<div class="footnote">See <a href="https://pandas.pydata.org/pandas-docs/stable/development/extending.html">Extending pandas  </a></div>
-
-<aside class="notes"><p>and you can, of course, combine them.</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="images/light-pandas.png" -->
 
 ## 1) Inheritance
@@ -185,11 +181,11 @@
 
 - Create a daughter class of DataFrame / Series
 
-- Mark additional properties as `_metadata`
+- Ensure operations return this class
 
 - Implement specific behaviour
 
-- Ensure operations return this class
+- Mark additional properties as `_metadata`
 </script></section><section  data-markdown><script type="text/template">
 ### Example*: Coloured DataFrame
 
@@ -323,7 +319,7 @@ ColouredDataFrame(some_data, colour="#888")
 </script></section><section  data-markdown><script type="text/template">
 **GeoSeries**
 
-geographical objects (such as points, curves and polygons)
+geographical objects (such as points, lines and polygons)
 
 <div style="height:1em"></div>
 
@@ -351,7 +347,6 @@ world.loc[[115,153]]
       <th>continent</th>
       <th>name</th>
       <th>iso_a3</th>
-      <th>gdp_md_est</th>
       <th style="background:#ffc">geometry</th>
     </tr>
   </thead>
@@ -362,7 +357,6 @@ world.loc[[115,153]]
       <td>Europe</td>
       <td>Hungary</td>
       <td>HUN</td>
-      <td>267600.0</td>
       <td style="background:#ffc">POLYGON ((22.08561 48.42226, 22.64082 48.15024...</td>
     </tr>
     <tr>
@@ -371,7 +365,6 @@ world.loc[[115,153]]
       <td>Europe</td>
       <td>Czechia</td>
       <td>CZE</td>
-      <td>350900.0</td>
       <td style="background:#ffc">POLYGON ((15.01700 51.10667, 15.49097 50.78473...</td>
     </tr>
   </tbody>
@@ -424,6 +417,30 @@ places_df.plot(ax=ax, c="red");
 
 = adding new methods to existing Series and DataFrames
 </script></section><section  data-markdown><script type="text/template">
+### Real-world examples: .str, .cat, .dt, ...
+
+Part of the pandas library itself!
+
+<div style="height:1em;"></div>
+
+```python
+words = pd.Series(["panda", "koala", "bear"])
+words.str.upper()
+```
+
+<div style="height:.1em;"></div>
+
+<div class="fragment output">
+
+```text
+0    PANDA
+1    KOALA
+2    BEAR
+dtype: object
+```
+
+</div>
+</script></section><section  data-markdown><script type="text/template">
 ### Recipe
 
 - Create an accessor class
@@ -434,11 +451,9 @@ places_df.plot(ax=ax, c="red");
 </script></section><section  data-markdown><script type="text/template">
 ### Behind the scenes
 
-- register_\*\*\*_accessor
+- CachedAccessor class (used as *descriptor*)
 
-- CachedAccessor class
-
-- AttributeError
+- `AttributeError` if not applicable for a type
 </script></section><section  data-markdown><script type="text/template">
 #### Series accessor example: Panda multiplier! 
 
@@ -564,10 +579,6 @@ df.panda.invade()
   </tbody>
 </table>
 </script></section><section  data-markdown><script type="text/template">
-### Real-world examples: .str, .cat, .dt, ...
-
-Part of the pandas library itself!
-</script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="images/light-pandas.png" -->
 
 ## 3) Extension arrays
@@ -622,18 +633,6 @@ Part of the pandas library itself!
 
 <aside class="notes"><p>Actually, the reason for ExtensionArray in the first place...</p>
 </aside></script></section><section  data-markdown><script type="text/template">
-### Real-world example: fletcher
-
-<p><i class="fab fa-github"></i>&nbsp;xhochy/fletcher</p>
-
-<div style="height:1em;"></div>
-
-- Apache Arrow-backed columns
-
-- More types (strings, dicts, lists, ...)
-
-- Numba for operations
-</script></section><section  data-markdown><script type="text/template">
 ### Example*: Series with units
 
 <div style="margin-top:1em; font-size:65%">*hopefully not a stupid one</div>
@@ -1041,7 +1040,8 @@ df["fast"] = df["speed"] > u.Quantity("11 km/h")
     <div style="height:0em;"></div>
     <div><a href="https://dtone.engineering/>"><img style="height:6em;" src="images/logo_dtone.svg"/></a></div>
   </div>
-<div></script></section></div>
+<div>
+</script></section></div>
     </div>
 
     <script src="./js/reveal.js"></script>
