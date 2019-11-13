@@ -666,11 +666,10 @@ Based on <img alt="astropy logo" src="images/astropy-logo.svg" style="max-height
 ```python
 @pandas.api.extensions.register_extension_dtype
 class UnitsDtype(ExtensionDtype):
-    type = object
-    kind = "O"
+    type = Quantity          # Single item type
+    kind = "O"               # Numpy code ("generic object")
 
-    _is_numeric = True
-    _metadata = ("unit",)
+    _metadata = ("unit",)    # "Properties"
 
     def __init__(self, unit):
         # Simplified
