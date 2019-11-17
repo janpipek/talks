@@ -843,7 +843,9 @@ class UnitsSeriesAccessor:
         new_array = self.obj.array.to(unit)
         return pd.Series(new_array)   # Simplified
 
-    ...
+    def to_si(self) -> pd.Series:
+        """Convert series to a relevant SI unit.""
+        ...
 ```
 </script></section><section  data-markdown><script type="text/template">
 #### ...add tests...
