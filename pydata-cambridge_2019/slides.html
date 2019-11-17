@@ -888,6 +888,30 @@ tests/test_units.py .......F............................................ [ 16%]
 == 88 failed, 226 passed, 1 skipped, 7 xfailed, 202 warnings in 4.69 seconds ===
 ```
 </script></section><section  data-markdown><script type="text/template">
+#### Several headaches later...
+
+<div class="output">
+
+```test
+============================= test session starts =============================
+platform linux -- Python 3.7.3, pytest-5.1.1, py-1.8.0, pluggy-0.12.0
+rootdir: /home/honza/code/my/pandas_implants
+plugins: remotedata-0.3.2, doctestplus-0.3.0, openfiles-0.3.2, celery-4.3.0, ar
+raydiff-0.3, pylint-0.14.1
+collected 344 items                                                           
+
+tests/test_units.py ................................................... [ 14%]
+....................................................................... [ 35%]
+....................................................................... [ 56%]
+.................................................................x..... [ 76%]
+.............................x......xxxxxx............................. [ 97%]
+.....xx..                                                               [100%]
+
+======================== 334 passed, 10 xfailed in 1.50s ======================
+```
+
+</div>
+</script></section><section  data-markdown><script type="text/template">
 #### Example<sup>2</sup>: Runner's diary
 
 ```python
