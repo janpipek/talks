@@ -10,4 +10,6 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 * [Is Margherita Better than Quattro Stagioni - Polars vs Pandas API](https://janpipek.github.io/talks/prague-python-pizza_2024/) (Prague Python Pizza 2024)
 
+* [▃█▅ Terminal plotting](https://github.com/janpipek/cli-plotting-talk) (Brno Python Pizza 2025)
+
 
