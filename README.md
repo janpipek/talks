@@ -1,8 +1,8 @@
-# My talks
+# My talks & workshops
 
 Repository for the <https://janpipek.github.io/talks/> webpage.
 
-## Slides
+## Presentations
 
 * [Fun with histograms and the physt library](https://janpipek.github.io/talks/pycon-lt_2019/) (PyData Berlin 2018, PyCon LT 2019)
 
@@ -12,4 +12,6 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 * [▃█▅ Terminal plotting](https://github.com/janpipek/cli-plotting-talk) (Brno Python Pizza 2025)
 
+## Workshops
 
+- [Exploratory Data Analysis, the Polars Way](https://github.com/janpipek/eda-polars-way) (PyCon Italia 2024, EuroPython 2024)
