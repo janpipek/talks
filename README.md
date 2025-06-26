@@ -12,7 +12,7 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 * [▃█▅ Terminal plotting](https://github.com/janpipek/cli-plotting-talk) (Brno Python Pizza 2025)
 
-* [Data wrangling in a modern terminal](https://github.com/janpipek/terminal-data-talk) (PyData Prague Meetup, 2025
+* [Data wrangling in a modern terminal](https://github.com/janpipek/terminal-data-talk) (PyData Prague Meetup, 2025)
 
 ## Workshops
 
