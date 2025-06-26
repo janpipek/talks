@@ -12,6 +12,8 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 * [▃█▅ Terminal plotting](https://github.com/janpipek/cli-plotting-talk) (Brno Python Pizza 2025)
 
+* [Data wrangling in a modern terminal](https://github.com/janpipek/terminal-data-talk) (PyData Prague Meetup, 2025
+
 ## Workshops
 
-- [Exploratory Data Analysis, the Polars Way](https://github.com/janpipek/eda-polars-way) (PyCon Italia 2024, EuroPython 2024)
+- [Exploratory Data Analysis, the Polars Way](https://github.com/janpipek/eda-polars-way) (PyCon Italia 2024, EuroPython 2024, PyCon Austria 2025)
