@@ -17,3 +17,11 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 ## Workshops
 
 - [Exploratory Data Analysis, the Polars Way](https://github.com/janpipek/eda-polars-way) (PyCon Italia 2024, EuroPython 2024, PyCon Austria 2025)
+
+### In collaboration with [@coobas](https://github.com/coobas/)
+
+- [The Data Trinity – Practical Numpy, Pandas and Matplotlib](https://github.com/coobas/pycon-cz-2019-workshop) (PyCon CZ 2019)
+
+- [Robust Data Transformation with Pandas: Typing, Validation, Testing](Robust Data Transformation with Pandas: Typing, Validation, Testing) (EuroPython 2023)
+
+- [Accelerating Scientific Python: JAX, Numba, and Ray in Action](https://github.com/coobas/europython-25) (EuroPython 2025)
