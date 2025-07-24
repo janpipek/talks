@@ -22,6 +22,6 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 - [The Data Trinity – Practical Numpy, Pandas and Matplotlib](https://github.com/coobas/pycon-cz-2019-workshop) (PyCon CZ 2019)
 
-- [Robust Data Transformation with Pandas: Typing, Validation, Testing](Robust Data Transformation with Pandas: Typing, Validation, Testing) (EuroPython 2023)
+- [Robust Data Transformation with Pandas: Typing, Validation, Testing](https://github.com/coobas/robust-pandas-workshop) (EuroPython 2023)
 
 - [Accelerating Scientific Python: JAX, Numba, and Ray in Action](https://github.com/coobas/europython-25) (EuroPython 2025)
