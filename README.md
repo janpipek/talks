@@ -4,7 +4,7 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 ## Presentations
 
-* [Fun with histograms and the physt library](https://janpipek.github.io/talks/pycon-lt_2019/) (PyData Berlin 2018, PyCon LT 2019)
+* [Fun with histograms and the physt library](https://janpipek.github.io/talks/pycon-lt_2019/) (PyData Berlin 2018, PyCon LT 2019) [🎥](https://www.youtube.com/watch?v=ZG-wH3-Up9Y)
 
 * [A practical guide to designing implants for pandas](https://janpipek.github.io/talks/pydata-prague_2020/) (PyCon CZ 2019, BI Fórum Budapest 2019, PyData Cambridge 2019, PyData Prague 2020)
 
@@ -12,7 +12,7 @@ Repository for the <https://janpipek.github.io/talks/> webpage.
 
 * [▃█▅ Terminal plotting](https://github.com/janpipek/cli-plotting-talk) (Brno Python Pizza 2025)
 
-* [Data wrangling in a modern terminal](https://github.com/janpipek/terminal-data-talk) (PyData Prague Meetup, 2025)
+* [Data wrangling in a modern terminal](https://github.com/janpipek/terminal-data-talk) (PyData Prague Meetup, 2025) [🎥](https://www.youtube.com/watch?v=LxKTcRgs6ZM)
 
 ## Workshops
 
