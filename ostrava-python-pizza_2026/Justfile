@@ -1,0 +1,2 @@
+present:
+    uvx clippt@latest presentation.toml --continue
