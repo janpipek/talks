@@ -1,14 +1,10 @@
 import httpx
 import pandas as pd
 
-
-# HIDE_ABOVE
 def get_aladin_forecast(location_id: int) -> pd.DataFrame:
     """Download and parse aladin forecast data."""
 
-    response = httpx.get(
-        f"https://data-provider.chmi.cz/api/graphs/graf.meteogram/{location_id}"
-    )
+    response = httpx.get(f"https://data-provider.chmi.cz/api/graphs/graf.meteogram/{location_id}")
     data = response.json()["data"]
     df = pd.DataFrame(data)
     df = (
