@@ -2,10 +2,10 @@ import typer
 import pandas as pd
 import httpx
 
-app = typer.Typer()
+main = typer.Typer()
 
 
-@app.command()
+@main.command()
 def aladin(location: str, json: bool = False):
     """Download and parse aladin forecast data."""
     try:
@@ -40,7 +40,7 @@ def aladin(location: str, json: bool = False):
     print(df.to_markdown(tablefmt="rounded_outline", index=False))
 
 
-@app.command()
+@main.command()
 def locations(json: bool = typer.Option(False, help="Output in JSON format")) -> "pd.DataFrame":
     """Show available locations"""
     if json:
@@ -86,4 +86,4 @@ def get_location_id(name: str) -> int:
 
 
 if __name__ == "__main__":
-    app()
+    main()
