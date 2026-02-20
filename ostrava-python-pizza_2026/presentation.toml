@@ -1,7 +1,7 @@
 title = 'turn "your function" --into "a CLI app'
 slides = [
-  "slides/title.md",
-  { path = "chmix.py", title = "I have a function..." },
+  { path = "slides/title.md", classes = ["title"] },
+  { path = "chmix.py", title = "I have a function...", runnable = false },
   "slides/use_chmix.py",
   # Try to run it => import errors
   { title = "Enter uv" },
