@@ -1,11 +1,11 @@
-dev:
-    uv run --with textual-dev --with-editable ../../clippt textual run --dev -c clippt presentation.toml --continue
-
 present:
-    uvx clippt presentation.toml --continue
+    uvx clippt presentation.toml --continue --disable-footer
 
 textual-console:
     uvx --from textual-dev textual console -x EVENT -x SYSTEM -x DEBUG
+
+dev:
+    uv run --with textual-dev --with-editable ../../clippt textual run --dev -c clippt presentation.toml --continue
 
 qr:
     qrencode -t utf8i https://github.com/janpipek/talks/ostrava-python-pizza_2026

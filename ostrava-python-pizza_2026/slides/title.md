@@ -1,4 +1,4 @@
-# turn "your function" --into "a CLI app"
+# turn "your function" --into "a CLI app" in 10 minutes
 
 Jan Pipek
 

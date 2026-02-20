@@ -1,40 +1,101 @@
-title = 'turn "your function" --into "a CLI app'
+title = 'turn "your function" --into "a CLI app" in 10 minutes'
 shell_cwd = "chmix"
-slides = [
-  { path = "slides/title.md", classes = ["title"] },
-  { path = "versions/chmix_function.py", title = "I have a function...", runnable = false },
-  { type = "shell", source = """
-  cp ../versions/chmix_main.py ./chmix.py \\
-     .\\
-  && \\
-  # HIDE_ABOVE \\
-  uv run --with pandas --with httpx python -i chmix.py
-  """, title = "Use it!", alt_screen=true, cwd="."
-  },
 
-  # Show it runs
+[[slides]]
+path = "slides/title.md"
+classes = ["title"]
 
-  "slides/tasks.md",
-  { path = "chmix/chmix.py", runnable = false, execute_before="cp ../versions/chmix_main.py ./chmix.py"},
-  # Let's experiment with it
+[[slides]]
+source = "## ...like it is not 201x anymore."
 
-  "slides/uv.md",
-  { type = "shell", source="uv init --app --author-from git", title="Create a package", run_once=false},
-  { path = "chmix/pyproject.toml", title = "pyproject.toml", runnable = false },
-  { path = "chmix/chmix.py", runnable = false, execute_before="cp ../versions/chmix_typer.py ./chmix.py"},
+[[slides]]
+path = "versions/chmix_function.py"
+runnable = false
 
-  # uv init
-  # uv add
-  { path = "chmix/pyproject.toml", title = "pyproject.toml", runnable = false },
-  # Run it again => nothing
-  # Last slide
-  { source="# How do I get it to a completely different computer?"},
-  { type="shell", source="git checkout chmix-0.0.2 -- ./chmix", title="Live coding has its limits..."},
-  "pypi.md",
-  { source = "Use uv", title="Build and publish the package", cwd="chmix"},
-  { type="shell", source="docker exec -it uv-demo bash", alt_screen=true},
+[[slides]]
+execute_before = "cp ../versions/chmix_function.py ./chmix.py"
+type = "shell"
+source = "uv run --with pandas --with httpx python"
+title = "Use it!"
+alt_screen = true
 
+# Show it runs
+#
+[[slides]]
+execute_before = "cp ../versions/chmix_function.py ./chmix.py"
+type = "shell"
+source = "python chmix.py"
+title = "However"
+alt_screen = false
 
-  { path = "slides/end.md", classes = ["title"] },
+[[slides]]
+run_before = "rm -rf ."
+source = """
+# Goals
 
-]
+- define what it needs to run
+- take the arguments from the command line
+- provide a nice output
+- distribute it to your friends
+"""
+
+[[slides]]
+source = """
+# Task 1: Create a Python package
+
+- a structured directory with `pyproject.toml`
+- necessary to specify the dependencies (heh)
+
+Let's use **uv**.
+"""
+
+[[slides]]
+type = "shell"
+source = "uv init --app --author-from git"
+title = "Create a package"
+
+[[slides]]
+path = "chmix/pyproject.toml"
+title = "pyproject.toml"
+runnable = false
+
+[[slides]]
+path = "chmix/chmix.py"
+runnable = false
+execute_before = "cp ../versions/chmix_typer.py ./chmix.py"
+
+# uv init
+# uv add
+
+[[slides]]
+path = "chmix/pyproject.toml"
+title = "pyproject.toml"
+runnable = false
+
+# Run it again => nothing
+# Last slide
+
+[[slides]]
+source = "# How do I get it to a completely different computer?"
+
+[[slides]]
+type = "shell"
+source = "git checkout chmix-0.0.2 -- ./chmix"
+title = "Live coding has its limits..."
+
+[[slides]]
+path = "pypi.md"
+
+[[slides]]
+source = "Use uv"
+title = "Build and publish the package"
+cwd = "chmix"
+
+[[slides]]
+type = "shell"
+source = "docker exec -it uv-demo bash"
+alt_screen = true
+
+[[slides]]
+path = "slides/end.md"
+classes = ["title"]
