@@ -1,16 +1,23 @@
 title = 'turn "your function" --into "a CLI app'
+shell_cwd = "chmix"
 slides = [
   { path = "slides/title.md", classes = ["title"] },
-  { path = "chmix.py", title = "I have a function...", runnable = false },
-  "slides/use_chmix.py",
-  # Try to run it => import errors
-  { title = "Enter uv" },
+  { path = "versions/chmix_function.py", title = "I have a function...", runnable = false },
+  { type = "shell", source = "uv run --with pandas --with httpx python -i chmix.py", title = "Use it!", alt_screen=true},
+  "slides/tasks.md",
+  { path = "chmix/chmix.py", runnable = false, execute_before="cp ../versions/chmix_main.py ./chmix.py"},
+  # Let's experiment with it
+
+  "slides/uv.md",
+  { type = "shell", source="uv init --app --author-from git", title="Create a package", run_once=false},
+  { path = "chmix/pyproject.toml", title = "pyproject.toml", runnable = false },
+  { path = "chmix/chmix.py", runnable = false, execute_before="cp ../versions/chmix_typer.py ./chmix.py"},
+
   # uv init
   # uv add
+  { path = "chmix/pyproject.toml", title = "pyproject.toml", runnable = false },
   # Run it again => nothing
-  "slides/outline2.md",
-  { title = "Enter typer" },
-  "slides/outline3.md",
   # Last slide
-  { title = "Thank you" },
+  { path = "slides/end.md", classes = ["title"] },
+
 ]

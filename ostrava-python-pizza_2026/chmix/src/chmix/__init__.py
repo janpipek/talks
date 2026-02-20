@@ -1,7 +1,9 @@
-import httpx
+import typer
 import pandas as pd
+import httpx
 
-def aladin(location_id: int) -> pd.DataFrame:
+
+def aladin(location_id: int) -> "pd.DataFrame":
     """Download and parse aladin forecast data."""
     response = httpx.get(f"https://data-provider.chmi.cz/api/graphs/graf.meteogram/{location_id}")
     data = response.json()["data"]
@@ -24,11 +26,10 @@ def aladin(location_id: int) -> pd.DataFrame:
     )
     return df
 
-...
-# HIDE_BELOW
 
-
-def locations() -> pd.DataFrame:
+def locations() -> "pd.DataFrame":
+    import pandas as pd
+    import httpx
     def parse_locations(data, search: str | None = None):
         df = pd.DataFrame([row["properties"] for row in data["features"]])
         df = (
@@ -53,8 +54,10 @@ def location(name: str) -> int:
     except KeyError:
         raise ValueError(f"Location '{name}' not found.")
 
+app = typer.Typer()
+app.command()(aladin)
+app.command()(locations)
+app.command()(location)
 
-print("Available functions:")
-print("- aladin(location_id: int) -> pd.DataFrame")
-print("- location(name: str) -> int")
-print("- locations() -> pd.DataFrame")
+if __name__ == "__main__":
+    app()

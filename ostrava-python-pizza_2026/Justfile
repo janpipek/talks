@@ -1,9 +1,15 @@
-present:
-    alias proper_python='uv --with pandas --with httpx python'
-    uvx --with pandas --with httpx clippt presentation.toml --continue
-
 dev:
-    uv run --with pandas --with httpx --with textual-dev --with-editable ../../clippt textual run --dev -c clippt presentation.toml
+    uv run --with textual-dev --with-editable ../../clippt textual run --dev -c clippt presentation.toml --continue
+
+present:
+    uvx clippt presentation.toml --continue
 
 textual-console:
     uvx --from textual-dev textual console -x EVENT -x SYSTEM -x DEBUG
+
+qr:
+    qrencode -t utf8i https://github.com/janpipek/talks/ostrava-python-pizza_2026
+
+clean:
+    rm -f chmix/pyproject.toml
+    rm -rf chmix/__pycache__
