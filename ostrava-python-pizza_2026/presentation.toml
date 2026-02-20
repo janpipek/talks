@@ -61,8 +61,13 @@ title = "pyproject.toml"
 runnable = false
 
 [[slides]]
-type = "shell"
-source = "tree"
+source = """
+## Update the package
+
+- set the license
+- add the dependencies
+- copy the actual function code
+"""
 
 # uv init
 # uv add
