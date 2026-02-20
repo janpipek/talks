@@ -1,6 +1,6 @@
 [project]
 name = "chmix"
-version = "0.1.3"
+version = "0.0.2"
 description = "Download weather forecast data from CHMI."
 readme = "README.md"
 authors = [
@@ -21,8 +21,3 @@ chmix = "chmix:app"
 [build-system]
 requires = ["uv_build>=0.10.3,<0.11.0"]
 build-backend = "uv_build"
-
-[[tool.uv.index]]
-name = "testpypi"
-url = "https://test.pypi.org/simple/"
-publish-url = "https://test.pypi.org/legacy/"
