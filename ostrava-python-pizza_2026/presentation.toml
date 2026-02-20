@@ -3,7 +3,17 @@ shell_cwd = "chmix"
 slides = [
   { path = "slides/title.md", classes = ["title"] },
   { path = "versions/chmix_function.py", title = "I have a function...", runnable = false },
-  { type = "shell", source = "uv run --with pandas --with httpx python -i chmix.py", title = "Use it!", alt_screen=true},
+  { type = "shell", source = """
+  cp ../versions/chmix_main.py ./chmix.py \\
+     .\\
+  && \\
+  # HIDE_ABOVE \\
+  uv run --with pandas --with httpx python -i chmix.py
+  """, title = "Use it!", alt_screen=true, cwd="."
+  },
+
+  # Show it runs
+
   "slides/tasks.md",
   { path = "chmix/chmix.py", runnable = false, execute_before="cp ../versions/chmix_main.py ./chmix.py"},
   # Let's experiment with it
@@ -20,7 +30,7 @@ slides = [
   # Last slide
   { source="# How do I get it to a completely different computer?"},
   { type="shell", source="git checkout chmix-0.0.2 -- ./chmix", title="Live coding has its limits..."},
-  { source = "# PyPI"},
+  "pypi.md",
   { source = "Use uv", title="Build and publish the package", cwd="chmix"},
   { type="shell", source="docker exec -it uv-demo bash", alt_screen=true},
 
