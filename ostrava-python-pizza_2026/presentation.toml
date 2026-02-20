@@ -29,7 +29,8 @@ title = "However"
 alt_screen = false
 
 [[slides]]
-run_before = "rm -rf ."
+execute_before = "rm -rf *"
+cwd = "chmix"
 source = """
 # Goals
 
@@ -51,8 +52,8 @@ Let's use **uv**.
 
 [[slides]]
 type = "shell"
-source = "uv init --app --author-from git"
-title = "Create a package"
+source = "uv init --app --author-from git --package --description 'Download weather forecast data from CHMI.'"
+title = "Create a package using uv"
 
 [[slides]]
 path = "chmix/pyproject.toml"
@@ -60,9 +61,8 @@ title = "pyproject.toml"
 runnable = false
 
 [[slides]]
-path = "chmix/chmix.py"
-runnable = false
-execute_before = "cp ../versions/chmix_typer.py ./chmix.py"
+type = "shell"
+source = "tree"
 
 # uv init
 # uv add
