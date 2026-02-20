@@ -13,3 +13,15 @@ qr:
 clean:
     rm -f chmix/pyproject.toml
     rm -rf chmix/__pycache__
+
+docker-build:
+    docker build -t uv-demo docker/
+
+docker-start:
+    docker run -dit --name uv-demo --hostname a-completely-different-computer uv-demo
+
+docker-connect:
+    docker exec -it uv-demo bash
+
+docker-stop:
+    docker stop uv-demo && docker rm uv-demo
