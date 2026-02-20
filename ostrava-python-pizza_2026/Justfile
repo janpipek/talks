@@ -1,2 +1,9 @@
 present:
-    uvx clippt@latest presentation.toml --continue
+    alias proper_python='uv --with pandas --with httpx python'
+    uvx --with pandas --with httpx clippt presentation.toml --continue
+
+dev:
+    uv run --with pandas --with httpx --with textual-dev --with-editable ../../clippt textual run --dev -c clippt presentation.toml
+
+textual-console:
+    uvx --from textual-dev textual console -x EVENT -x SYSTEM -x DEBUG

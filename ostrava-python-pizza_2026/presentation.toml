@@ -1,23 +1,16 @@
 title = 'turn "your function" --into "a CLI app'
-
 slides = [
-    "slides/title.md",
-    {path = "slides/aladin_forecast.py", type="python", title="your function"},
-    {type = "shell", content = "# A bit of cheating\n\nuv run --with httpx --with pandas python -i slides/aladin_forecast.py", alt_screen=true},
-
-    "slides/outline1.md",
-
-
-    {type = "shell", content = "python3 slides/aladin_forecast.py"},
-    # Try to run it => import errors
-    { title = "Enter uv"},
-    # uv init
-    # uv add
-    # Run it again => nothing
-    "slides/outline2.md",
-    { title = "Enter typer"},
-
-    "slides/outline3.md",
-    # Last slide
-    { title = "Thank you" },
+  "slides/title.md",
+  { path = "chmix.py", title = "I have a function..." },
+  "slides/use_chmix.py",
+  # Try to run it => import errors
+  { title = "Enter uv" },
+  # uv init
+  # uv add
+  # Run it again => nothing
+  "slides/outline2.md",
+  { title = "Enter typer" },
+  "slides/outline3.md",
+  # Last slide
+  { title = "Thank you" },
 ]
