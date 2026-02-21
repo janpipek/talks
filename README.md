@@ -1,7 +1,5 @@
 # My talks & workshops
 
-Repository for the <https://janpipek.github.io/talks/> webpage.
-
 ## Presentations
 
 * [Fun with histograms and the physt library](https://janpipek.github.io/talks/pycon-lt_2019/) (PyData Berlin 2018, PyCon LT 2019) [🎥](https://www.youtube.com/watch?v=ZG-wH3-Up9Y)
