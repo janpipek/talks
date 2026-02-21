@@ -1,8 +1,4 @@
-# turn "your function" --into "a CLI app" (in 10 minutes)
-
-Jan Pipek
-
-Ostrava Python Pizza 2026
+# Thank you
 
 ```
 █▀▀▀▀▀█ ▄ █ ▀█▄█ ▀▄▀▀ ▄▀▀ █▀▀▀▀▀█
