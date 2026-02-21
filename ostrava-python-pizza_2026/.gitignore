@@ -1,0 +1,4 @@
+.current_slide
+.zed
+*.pyc
+.python-version

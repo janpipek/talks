@@ -1,0 +1,41 @@
+set quiet
+
+present: clean
+    clear
+    uvx clippt presentation.toml --disable-footer
+
+record:
+    asciinema rec -c "just present" --overwrite presentation.cast
+
+continue:
+    uvx clippt presentation.toml --continue --disable-footer
+
+textual-console:
+    uvx --from textual-dev textual console -x EVENT -x SYSTEM -x DEBUG
+
+dev:
+    uv run --with textual-dev --with-editable ../../clippt textual run --dev -c clippt presentation.toml --continue
+
+qr:
+    qrencode -t utf8i https://github.com/janpipek/talks/ostrava-python-pizza_2026
+
+clean:
+    rm -rf chmix/*
+    mkdir -p chmix
+
+docker-build:
+    docker build -t uv-demo docker/
+
+docker-start:
+    docker run -dit --name uv-demo --hostname a-completely-different-computer uv-demo
+
+docker-connect:
+    docker exec -it uv-demo bash
+
+docker-stop:
+    docker stop uv-demo && docker rm uv-demo
+
+ask-claude:
+    claude -c "Create a properly structured and packaged PyPI-ready CLI app from chmix_function.py. Use
+    modern tooling but don't overdo it. Write a marp-ready presentation about the process
+    into presentation.md. Don't ask questions."

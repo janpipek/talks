@@ -1,0 +1,146 @@
+title = 'turn "your function" --into "a CLI app" in 10 minutes'
+shell_cwd = "chmix"
+
+[[slides]]
+path = "slides/title.md"
+classes = ["title"]
+
+[[slides]]
+type = "shell"
+title = "# Or in 2 minutes?"
+source = """
+claude -c "Create a properly structured and packaged PyPI-ready CLI app from chmix_function.py. Use
+ modern tooling but don't overdo it. Write a marp-ready presentation about the process
+ into presentation.md. Don't ask questions."
+"""
+runnable = false
+
+[[slides]]
+path = "versions/chmix_function.py"
+runnable = false
+
+[[slides]]
+# shell slide has different pwd!!!
+execute_before = "cp ../versions/chmix_function.py chmix.py"
+type = "shell"
+source = "uv run --with pandas --with httpx python"
+title = "Use it (interactively)!"
+alt_screen = true
+
+# Show it runs
+#
+[[slides]]
+# shell slide has different pwd!!!
+execute_before = "cp ../versions/chmix_function.py chmix.py"
+type = "shell"
+source = "python chmix.py"
+title = "However"
+alt_screen = false
+
+[[slides]]
+source ="""
+# Goals
+
+- define what it needs to run
+- take the arguments from the command line
+- provide a nice output
+- distribute it to your friends
+"""
+
+[[slides]]
+execute_before = "rm -rf *"
+cwd = "chmix"
+source = """
+# Task 1: Create a Python package
+
+- a structured directory with `pyproject.toml`
+- necessary to specify the dependencies (heh)
+
+Let's use **uv**.
+"""
+
+[[slides]]
+type = "shell"
+source = "uv init --app --author-from git --package --description 'Download weather forecast data from CHMI.'"
+title = "Create a package using uv"
+
+[[slides]]
+path = "chmix/pyproject.toml"
+title = "pyproject.toml"
+runnable = false
+
+[[slides]]
+type = "shell"
+source = "uv add pandas httpx"
+
+[[slides]]
+path = "chmix/pyproject.toml"
+title = "pyproject.toml"
+runnable = false
+
+# license
+# uv add
+# look at the script
+
+# Run it again => nothing
+#
+[[slides]]
+execute_before = "cp versions/chmix_base.py chmix/src/chmix/__init__.py"
+source = """
+# Task 2: Make a nice executable
+
+- argument parsing
+- output (human- and/or machine-readable
+
+Let's use **typer**.
+"""
+
+[[slides]]
+type = "shell"
+source = "uv add typer"
+
+[[slides]]
+path = "chmix/src/chmix/__init__.py"
+runnable = false
+
+[[slides]]
+source = "git checkout chmix-full -- . && uv sync && eza -T"
+type = "shell"
+title = "Live coding has its limits..."
+
+[[slides]]
+path = "chmix/src/chmix/__init__.py"
+runnable = false
+
+[[slides]]
+source = "# Task 3: get it to a completely different computer."
+
+
+[[slides]]
+path = "slides/pypi.md"
+
+[[slides]]
+title = "Build"
+type = "shell"
+source = "uv build"
+
+[[slides]]
+title = "Publish"
+type = "shell"
+source = "uv publish"
+
+[[slides]]
+type = "shell"
+title = "The closest I get to a different computer."
+source = "docker exec -it uv-demo bash"
+alt_screen = true
+
+[[slides]]
+path = "slides/end.md"
+classes = ["title"]
+
+[[slides]]
+source = "# Back-up slides"
+
+[[slides]]
+path = "slides/agent.md"
