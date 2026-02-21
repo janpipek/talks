@@ -6,7 +6,14 @@ path = "slides/title.md"
 classes = ["title"]
 
 [[slides]]
-source = "## ...like it is not 201x anymore."
+type = "shell"
+title = "# Or in 2 minutes?"
+source = """
+claude -c "Create a properly structured and packaged PyPI-ready CLI app from chmix_function.py. Use
+ modern tooling but don't overdo it. Write a marp-ready presentation about the process
+ into presentation.md. Don't ask questions."
+"""
+runnable = false
 
 [[slides]]
 path = "versions/chmix_function.py"
@@ -94,14 +101,16 @@ source = "uv add typer"
 
 [[slides]]
 path = "chmix/src/chmix/__init__.py"
+runnable = false
 
 [[slides]]
-source = "git checkout chmix-full -- ."
+source = "git checkout chmix-full -- . && uv sync && eza -T"
 type = "shell"
 title = "Live coding has its limits..."
 
 [[slides]]
 path = "chmix/src/chmix/__init__.py"
+runnable = false
 
 [[slides]]
 source = "# Task 3: get it to a completely different computer."
