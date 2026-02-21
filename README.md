@@ -12,6 +12,8 @@
 
 * [Data wrangling in a modern terminal](https://github.com/janpipek/terminal-data-talk) (PyData Prague Meetup, 2025) [🎥](https://www.youtube.com/watch?v=LxKTcRgs6ZM)
 
+* [turn "your function" --into "a CLI app" in 10 minutes](https://github.com/janpipek/talks/tree/master/ostrava-python-pizza_2026) (Python Pizza Ostrava 2026)
+
 ## Workshops
 
 - [Exploratory Data Analysis, the Polars Way](https://github.com/janpipek/eda-polars-way) (PyCon Italia 2024, EuroPython 2024, PyCon Austria 2025)
