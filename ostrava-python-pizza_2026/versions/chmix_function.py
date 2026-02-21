@@ -42,7 +42,7 @@ def locations() -> pd.DataFrame:
         )
         return df
 
-    response = httpx.get("https://data-provider.chmi.cz/api/poi/data/map/obce/2")
+    response = httpx.get("https://data-provider.chmi.cz/api/poi/data/map/obce/4")
     data = response.json()
     return parse_locations(data)
 
