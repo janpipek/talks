@@ -13,7 +13,8 @@ path = "versions/chmix_function.py"
 runnable = false
 
 [[slides]]
-execute_before = "cp ../versions/chmix_function.py ./chmix.py"
+# shell slide has different pwd!!!
+execute_before = "cp ../versions/chmix_function.py chmix.py"
 type = "shell"
 source = "uv run --with pandas --with httpx python"
 title = "Use it (interactively)!"
@@ -22,16 +23,15 @@ alt_screen = true
 # Show it runs
 #
 [[slides]]
-execute_before = "cp ../versions/chmix_function.py ./chmix.py"
+# shell slide has different pwd!!!
+execute_before = "cp ../versions/chmix_function.py chmix.py"
 type = "shell"
 source = "python chmix.py"
 title = "However"
 alt_screen = false
 
 [[slides]]
-execute_before = "rm -rf *"
-cwd = "chmix"
-source = """
+source ="""
 # Goals
 
 - define what it needs to run
@@ -41,6 +41,8 @@ source = """
 """
 
 [[slides]]
+execute_before = "rm -rf *"
+cwd = "chmix"
 source = """
 # Task 1: Create a Python package
 
@@ -60,6 +62,15 @@ path = "chmix/pyproject.toml"
 title = "pyproject.toml"
 runnable = false
 
+[[slides]]
+type = "shell"
+source = "uv add pandas httpx"
+
+[[slides]]
+path = "chmix/pyproject.toml"
+title = "pyproject.toml"
+runnable = false
+
 # license
 # uv add
 # look at the script
@@ -67,7 +78,7 @@ runnable = false
 # Run it again => nothing
 #
 [[slides]]
-execute_before = "cp ../versions/chmix_function.py chmix/src/chmix/__init__.py"
+execute_before = "cp versions/chmix_base.py chmix/src/chmix/__init__.py"
 source = """
 # Task 2: Make a nice executable
 
@@ -75,13 +86,17 @@ source = """
 - output (human- and/or machine-readable
 
 Let's use **typer**.
-""""
+"""
+
+[[slides]]
+type = "shell"
+source = "uv add typer"
 
 [[slides]]
 path = "chmix/src/chmix/__init__.py"
 
 [[slides]]
-source = "git checkout chmix-full -- ./chmix"
+source = "git checkout chmix-full -- ."
 type = "shell"
 title = "Live coding has its limits..."
 
@@ -96,9 +111,14 @@ source = "# Task 3: get it to a completely different computer."
 path = "slides/pypi.md"
 
 [[slides]]
-source = "Use uv"
-title = "Build and publish the package"
-cwd = "chmix"
+title = "Build"
+type = "shell"
+source = "uv build"
+
+[[slides]]
+title = "Publish"
+type = "shell"
+source = "uv publish"
 
 [[slides]]
 type = "shell"

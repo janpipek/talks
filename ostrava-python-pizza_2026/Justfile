@@ -1,4 +1,12 @@
+set quiet
+
 present:
+    uvx clippt presentation.toml --disable-footer
+
+record:
+    asciinema rec -c "just present" --overwrite presentation.cast
+
+continue:
     uvx clippt presentation.toml --continue --disable-footer
 
 textual-console:
