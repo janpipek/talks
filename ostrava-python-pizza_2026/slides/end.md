@@ -19,3 +19,5 @@
 █ ▀▀▀ █ █▀▄█▀ ▄▀  ▀▄▀▄█ ▀ █▄ ██
 ▀▀▀▀▀▀▀ ▀▀ ▀    ▀▀  ▀ ▀▀▀ ▀  ▀ ▀
 ```
+
+(implemented in **clippt** presentation tool)
