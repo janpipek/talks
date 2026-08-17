@@ -2,13 +2,13 @@ set quiet
 
 present: clean
     clear
-    uvx clippt presentation.toml --disable-footer
+    uvx clippt presentation.toml --no-footer
 
 record:
     asciinema rec -c "just present" --overwrite presentation.cast
 
 continue:
-    uvx clippt presentation.toml --continue --disable-footer
+    uvx clippt presentation.toml --continue --no-footer
 
 textual-console:
     uvx --from textual-dev textual console -x EVENT -x SYSTEM -x DEBUG
