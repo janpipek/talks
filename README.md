@@ -24,4 +24,7 @@
 
 - [Robust Data Transformation with Pandas: Typing, Validation, Testing](https://github.com/coobas/robust-pandas-workshop) (EuroPython 2023)
 
+- [HiLase Python Course](https://github.com/HiLASEPythonCourse/hilase-python-course-2021/) (Scientific Python for HiLase Laser research facility, 2021)
+
 - [The Data Trinity – Practical Numpy, Pandas and Matplotlib](https://github.com/coobas/pycon-cz-2019-workshop) (PyCon CZ 2019)
+
